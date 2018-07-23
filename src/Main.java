@@ -1,18 +1,16 @@
 import java.util.*;
+
+import javax.swing.JFrame;
 public class Main {
 
 	public static void main(String[] args) {
+		AbyssiaForest map = new AbyssiaForest();
+		map.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Scanner sc= new Scanner(System.in);
-		Player player= new Player();
-		boolean gameRunning=true;
-		while(gameRunning){
-			System.out.println("Welcome!"
-					+ "Before starting, please enter your name");
-			String name= sc.nextLine();
-			player.setPlayerName(name);
-			
-			
+		map.setVisible(true);
+		
+		
+		
 			
 			
 			
@@ -25,5 +23,3 @@ public class Main {
 		
 		
 	}
-
-}

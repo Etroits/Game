@@ -39,26 +39,26 @@ class Lamina extends JPanel {
 		map = new JPanel();
 		map.setLayout(new GridLayout(4,4));
 		add(map, BorderLayout.CENTER);
-		ActionListener inserts = new events();
-		ActionListener trap = new events();
-		ActionListener pickup = new events();
-		ActionListener freeway = new events();
-		makingevents("Starter point",inserts);
+		ActionListener battle = new events();
+		ActionListener trap = new traps();
+		ActionListener pickup = new pick();
+		ActionListener freeway = new nothing();
+		makingevents("Starter point",battle);
 		makingevents("",freeway);
-		makingevents("Enemy", inserts);
-		makingevents("Enemy", inserts);
-		makingevents("Enemy", inserts);
+		makingevents("Enemy", battle);
+		makingevents("Enemy", battle);
+		makingevents("Enemy", battle);
 		makingevents("Potion",pickup );
 		makingevents("",trap);
 		makingevents("Bomb",pickup);
 		makingevents("Potion", pickup);
-		makingevents("Enemy", inserts);
+		makingevents("Enemy", battle);
 		makingevents("",trap);
 		makingevents("Holy Water", pickup);
-		makingevents("Enemy", inserts);
+		makingevents("Enemy", battle);
 		makingevents("",freeway);
-		makingevents("Enemy", inserts);
-		makingevents("Heiss is here", inserts);
+		makingevents("Enemy", battle);
+		makingevents("Heiss is here", battle);
 		
 		
 	}
@@ -88,6 +88,33 @@ class Lamina extends JPanel {
 		}
 		
 	}
+	private class pick implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			
+			start=true;
+			
+			
+		}
+		
+	}
+	private class traps implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			start=true;
+			
+		}
+		
+	}
+	private class nothing implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			start=true;
+			
+		}
+		
+	}
+	
 	private JButton screen;
 	private JPanel map;
 	
